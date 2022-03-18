@@ -1,6 +1,7 @@
 package com.example.address;
 
 import java.io.IOException;
+import java.util.Objects;
 
 import com.example.address.controller.PersonEditDialogController;
 import com.example.address.controller.PersonOverviewController;
@@ -10,6 +11,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
@@ -53,6 +55,13 @@ public class AddressApplication extends Application {
     public void start(Stage primaryStage) {
         this.primaryStage = primaryStage;
         this.primaryStage.setTitle("AddressApp");
+
+        // Set the application icon.
+        this.primaryStage.getIcons().add(new Image(
+                Objects.requireNonNull(AddressApplication.class.getClassLoader().getResourceAsStream(
+                        "book_address_icon.png"))
+            )
+        );
 
         initRootLayout();
 
