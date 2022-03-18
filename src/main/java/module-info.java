@@ -12,4 +12,6 @@ module com.example.address {
 
     opens com.example.address to javafx.fxml;
     exports com.example.address;
+    opens com.example.address.controller to javafx.fxml;
+    exports com.example.address.controller;
 }
